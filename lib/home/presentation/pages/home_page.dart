@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                         child: FlutterMap(
                           options: const MapOptions(
                             initialCenter: coordinatePlace,
-                            initialZoom: 10,
+                            initialZoom: 15,
                             backgroundColor: Colors.black12,
                           ),
                           children: [
@@ -111,7 +111,6 @@ class _HomePageState extends State<HomePage> {
                       visible: !_isLocationAvailable || !_isInternetAvailable,
                       child: Center(
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             _isInternetAvailable
                                 ? const Icon(
@@ -155,7 +154,8 @@ class _HomePageState extends State<HomePage> {
                                   },
                                   child: const Text(
                                     'Налаштування геолокації >',
-                                    style: TextStyle(color: AppColors.greenColor),
+                                    style:
+                                        TextStyle(color: AppColors.greenColor),
                                   ),
                                 ),
                               ),
@@ -164,20 +164,20 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomElevatedButton(
+                  child: const Text(
+                    'Продовжити',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {},
+                ),
               ),
             ],
-          ),
-        ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CustomElevatedButton(
-            child: const Text(
-              'Продовжити',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () {},
           ),
         ),
       ),
